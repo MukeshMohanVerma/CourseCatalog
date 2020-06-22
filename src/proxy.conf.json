@@ -1,0 +1,7 @@
+{
+    "/all_categories": {
+        "target": "https://frontend-hiring.appspot.com/all_categories?secret=HelloMars",
+        "secure": false,
+        "changeOrigin": true
+    }
+}

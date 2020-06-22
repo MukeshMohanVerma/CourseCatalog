@@ -1,0 +1,29 @@
+body{background-color: #f9f9f9;}
+.padding-20{padding: 20px;}
+.bg-light-gray{background-color: #f7f7f9;}
+.mt-20{margin-top: 20px;}
+.bold{font-weight: bold;}
+
+/* Font Sizes */
+.f-12{font-size: 12px !important;}
+.f-14{font-size: 14px !important;}
+.f-16{font-size: 16px !important;}
+.f-18{font-size: 18px !important;}
+.f-20{font-size: 20px !important;}
+
+.no-border,.no-border:focus{border: none !important;}
+.no-bottom-border{border-bottom: none !important;}
+.border-bottom,.border-bottom:focus{border-bottom: 1px solid !important;}
+.bg-none{background: none !important;}
+.clr-light-gray{color: #a1a7ac !important;}
+.course-wrapper{margin-top: 20px;}
+.list-img{border-radius: 50%;background-color: skyblue;width: 40px;height: 40px;}
+.info-bar{margin-left: 10px;margin-top: -3px;}
+.m-t-10{margin-top: -10px;}
+.m-b-2{margin-bottom: 2px;}
+.spacer-30{height: 30px;}
+.card{box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);margin-bottom: 20px;}
+.card:hover{box-shadow: 2px 6px 10px 0 rgba(0,0,0,0.2);}
+.link{cursor: pointer;}
+.cat-wrapper{margin-top: 20px;}
+.m-b-10{margin-bottom: 10px;}
