@@ -66,6 +66,9 @@ export class AppComponent implements OnInit {
     for(var i=0;i<this.filteredCourses.length;i++){
       let data = this.filteredCourses[i];
       let status = this.dateService.getRegistrationStatus(data.start_date, data.end_date);
+      if(status.indexOf("Pre") != -1){
+        this.registrationCount++;
+      }
       data.registration_status = status;
     }
   }
