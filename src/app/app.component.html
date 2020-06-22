@@ -6,22 +6,18 @@
           <div class="input-group-prepend">
             <span class="input-group-text no-border bg-none border-bottom"><i class="fa fa-search"></i></span>
           </div>
-          <input type="text" class=" no-border border-bottom bg-none" placeholder="Filter courses">
+          <input type="text" [(ngModel)]="filterKeyword" (keyup)="filterByKeyword(filterKeyword)" class="no-border border-bottom bg-none" placeholder="Filter courses" >
         </div>
         <div class="spacer-30"></div>
         <label class="f-12 bold">Category</label>
         <div class="cat-wrapper">
-          <div class="custom-control custom-radio link">
+          <div class="custom-control custom-radio link m-b-10">
             <input type="radio" class="custom-control-input" id="allCat" name="cat" checked>
-            <label class="custom-control-label" for="allCat">All</label>
+            <label class="custom-control-label" for="allCat" (click)="filterByCategory('All')">All</label>
           </div>
-          <div class="custom-control custom-radio link">
-            <input type="radio" class="custom-control-input" id="computerCat" name="cat">
-            <label class="custom-control-label" for="computerCat">Computer</label>
-          </div>
-          <div class="custom-control custom-radio link">
-            <input type="radio" class="custom-control-input" id="engCat" name="cat">
-            <label class="custom-control-label" for="engCat">Enginiering</label>
+          <div class="custom-control custom-radio link m-b-10" *ngFor="let cats of  catList.payload">
+            <input type="radio" class="custom-control-input" id="{{cats}}Cat" name="cat">
+            <label class="custom-control-label" for="{{cats}}Cat" (click)="filterByCategory(cats)">{{cats}}</label>
           </div>
         </div>
         
@@ -31,13 +27,13 @@
     <label class="mt-20 f-18 clr-light-gray">4 Courses open for registration</label>
     <div class="course-wrapper">
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4" *ngFor="let course of filteredCourses">
           <div class="card link">
             <div class="card-header d-flex flex-row bg-none no-bottom-border">
                 <span class="list-img" href="javascript:void(0);"></span>
                 <div class="info-bar">
-                    <label class="f-16">Course 1</label>
-                    <p class="f-14 bold m-t-10">Hello c</p>
+                    <label class="f-16">{{course.title}}</label>
+                    <p class="f-14 bold m-t-10">{{course.instructor_name}}</p>
                 </div>
             </div>
             <div class="card-body">
@@ -46,7 +42,7 @@
                   <span class="fa fa-info-circle f-20"></span>
                 </div>
                 <div class="col-lg-10">
-                  <p class="f-14">This is description,This is descriptionThis is descriptionThis is descriptionThis is description</p>
+                  <p class="f-14">{{course.description}}</p>
                 </div>
               </div>
               <div class="spacer-30"></div>
@@ -55,108 +51,9 @@
                   <span class="fa fa-calendar f-20"></span>
                 </div>
                 <div class="col-lg-10">
-                  <p class="f-12 m-b-2">Pre-registration</p>
-                  <p class="f-12 m-b-2">March 18 - August 19</p>
-                  <p class="f-12 clr-light-gray m-b-2">22 week course, 4 hrs per day</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card link">
-            <div class="card-header d-flex flex-row bg-none no-bottom-border">
-                <span class="list-img" href="javascript:void(0);"></span>
-                <div class="info-bar">
-                    <label class="f-16">Course 1</label>
-                    <p class="f-14 bold m-t-10">Hello c</p>
-                </div>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-2">
-                  <span class="fa fa-info-circle f-20"></span>
-                </div>
-                <div class="col-lg-10">
-                  <p class="f-14">This is description,This is descriptionThis is descriptionThis is descriptionThis is description</p>
-                </div>
-              </div>
-              <div class="spacer-30"></div>
-              <div class="row">
-                <div class="col-lg-2">
-                  <span class="fa fa-calendar f-20"></span>
-                </div>
-                <div class="col-lg-10">
-                  <p class="f-12 m-b-2">Pre-registration</p>
-                  <p class="f-12 m-b-2">March 18 - August 19</p>
-                  <p class="f-12 clr-light-gray m-b-2">22 week course, 4 hrs per day</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card link">
-            <div class="card-header d-flex flex-row bg-none no-bottom-border">
-                <span class="list-img" href="javascript:void(0);"></span>
-                <div class="info-bar">
-                    <label class="f-16">Course 2</label>
-                    <p class="f-14 bold m-t-10">Hello c</p>
-                </div>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-2">
-                  <span class="fa fa-info-circle f-20"></span>
-                </div>
-                <div class="col-lg-10">
-                  <p class="f-14">This is description,This is descriptionThis is descriptionThis is descriptionThis is description</p>
-                </div>
-              </div>
-              <div class="spacer-30"></div>
-              <div class="row">
-                <div class="col-lg-2">
-                  <span class="fa fa-calendar f-20"></span>
-                </div>
-                <div class="col-lg-10">
-                  <p class="f-12 m-b-2">Pre-registration</p>
-                  <p class="f-12 m-b-2">March 18 - August 19</p>
-                  <p class="f-12 clr-light-gray m-b-2">22 week course, 4 hrs per day</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-lg-4">
-          <div class="card link">
-            <div class="card-header d-flex flex-row bg-none no-bottom-border">
-                <span class="list-img" href="javascript:void(0);"></span>
-                <div class="info-bar">
-                    <label class="f-16">Course 3</label>
-                    <p class="f-14 bold m-t-10">Hello c</p>
-                </div>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-2">
-                  <span class="fa fa-info-circle f-20"></span>
-                </div>
-                <div class="col-lg-10">
-                  <p class="f-14">This is description,This is descriptionThis is descriptionThis is descriptionThis is description</p>
-                </div>
-              </div>
-              <div class="spacer-30"></div>
-              <div class="row">
-                <div class="col-lg-2">
-                  <span class="fa fa-calendar f-20"></span>
-                </div>
-                <div class="col-lg-10">
-                  <p class="f-12 m-b-2">Pre-registration</p>
-                  <p class="f-12 m-b-2">March 18 - August 19</p>
-                  <p class="f-12 clr-light-gray m-b-2">22 week course, 4 hrs per day</p>
+                  <p class="f-12 m-b-2">{{course.registration_status}}</p>
+                  <p class="f-12 m-b-2">{{course.start_date | date : 'MMMM dd'}} - {{course.end_date | date : 'MMMM dd'}}</p>
+                  <p class="f-12 clr-light-gray m-b-2">{{course.estimated_workload}}</p>
                 </div>
               </div>
             </div>
